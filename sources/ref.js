@@ -38,6 +38,6 @@ module.exports = () => {
 	const ss = getRandomIntInclusive(0, 59)
 	const mss = getRandomIntInclusive(0, 999)
 	const date = new Date(`${YYYY}-${formatXX(MM)}-${formatXX(DD)}T${formatXX(hh)}:${formatXX(mm)}:${formatXX(ss)}.${formatXXX(mss)}Z`)
-	const value = date.valueOf().toString(36).toUpperCase().replace(/[O]/g, `0`)
-	return `${value.substr(0, 4)}/${value.substr(4)}`
+	const value = `${date.valueOf().toString(36).toUpperCase().replace(/[O]/g, `0`)}X`
+	return `${value.substr(0, 4)}/${value.substr(4, 6)}`
 }
