@@ -13,7 +13,9 @@ const formatXX = (value) => value > 9
 
 const formatXXX = (value) => value > 99
 	? value
-	: value > 9 ? `0${value}` : `00${value}`
+	: value > 9
+		? `0${value}`
+		: `00${value}`
 
 /**
  *

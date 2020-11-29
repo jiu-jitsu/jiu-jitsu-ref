@@ -3,4 +3,4 @@
  *
  */
 
-module.exports = require(`./sources/ref`)
+module.exports = require("./sources/ref")
