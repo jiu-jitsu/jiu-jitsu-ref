@@ -3,25 +3,33 @@
  *
  */
 
-const formatXX = (value) => value > 9
-	? value
-	: `0${value}`
+function formatXX (value) {
+	if (value > 9) {
+		return value
+	} else {
+		return `0${value}`
+	}
+}
 
 /**
  *
  */
 
-const formatXXX = (value) => value > 99
-	? value
-	: value > 9
-		? `0${value}`
-		: `00${value}`
+function formatXXX (value) {
+	if (value > 99) {
+		return value
+	} else if (value > 9) {
+		return `0${value}`
+	} else {
+		return `00${value}`
+	}
+}
 
 /**
  *
  */
 
-const getRandomIntInclusive = (min, max) => {
+function getRandomIntInclusive (min, max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);
 	return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -31,7 +39,7 @@ const getRandomIntInclusive = (min, max) => {
  *
  */
 
-module.exports = () => {
+function ref () {
 	const YYYY = getRandomIntInclusive(2000, 9000)
 	const MM = getRandomIntInclusive(1, 12)
 	const DD = getRandomIntInclusive(1, 27)
@@ -43,3 +51,9 @@ module.exports = () => {
 	const value = `${date.valueOf().toString(36).toUpperCase().replace(/[O]/g, `0`)}X`
 	return `${value.substr(0, 4)}/${value.substr(4, 6)}`
 }
+
+/**
+ *
+ */
+
+module.exports = ref
